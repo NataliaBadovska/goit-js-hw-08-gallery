@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    
+    <meta charset=" UTF-8" />
+    
+    <meta http-equiv=" X-UA-Compatible" content="IE=edge" />
+    
+    <meta name=" viewport" content=" width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+
+         .overlay{
+            /* max-height: 2000px;
+            max-width: 1600px; */
+            margin-left: auto;
+            margin-right: auto;
+            background-image: url('./images/slide_2-BG.jpg');
+            background-color: #C4C4C4;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+         }
+
+        .title-qr{
+             font-size: 80px;
+             letter-spacing: 0.03em;
+             color:white;
+             margin-right: 65px;
+            }
+
+        .title{
+             font-size: 55px;
+             letter-spacing: 0.03em;
+             color:goldenrod;
+             padding-left: 100px;
+             margin-top: 100px;
+            }
+            
+        .form {
+         font-family: Helvetica, sans-serif;
+         margin: 100px auto;
+         text-align: center;
+        padding: 16px;    
+
+        /* height: 300px;
+        width: 300px;
+        background-color: white; */
+      }
+        
+      #qrcode-container {
+         display: none;
+      }
+    
+      .qrcode img {
+          margin: 0 auto;
+          box-shadow: 0 0 10px rgba(67, 67, 68, 0.25);
+          padding: 4px;
+          width:600px;
+          height: 600px;
+    }
+    
+    .scan{
+        display: flex;
+        padding-top: 250px;
+        padding-left: 400px;
+        padding-right: 100px;
+}
+    
+         
+    </style>
+    
+</head>
+
+<body>
+    <section class="overlay">
+        <div class="scan"> 
+        <h1 class=" title-qr">Скануйте QR-код <br> для оплати</h1>
+        <div class=" form">
+            <form>
+                <div id=" qrcode-container">
+                    <div id=" qrcode" class=" qrcode">
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+        
+        
+        <h2 class=" title">Дякуємо що обираєте нас!</h2>
+    </section>
+     
+    <script src=" https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    
+    <script type=" text/javascript">
+              window.onload = function generateQRCode() {
+                let website = """+ТекстДляСканирования+"""
+                  let qrcodeContainer = document.getElementById(""qrcode"");
+                  qrcodeContainer.innerHTML = """";
+                  new QRCode(qrcodeContainer, website);
+                  document.getElementById(""qrcode-container"").style.display = ""block"";
+                  }
+             </script>
+    
+</body>
+
+</html>
